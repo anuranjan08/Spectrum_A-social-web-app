@@ -5,10 +5,15 @@ const router =express.Router();
 const homeController=require('../controllers/home_controller');
 
 //to check whether router is loaded or not
-console.log("router loaded");
+console.log("router loaded"); 
 
 //accessing function inside home controller
 router.get('/',homeController.home);
+// for handling routes other than home :
+
+router.use('/users',require('./users'));
+
+
 
 
 module.exports=router;
